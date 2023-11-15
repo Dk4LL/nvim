@@ -142,11 +142,13 @@ return {
       ensure_installed = {
         "bash",
         "html",
+        "haskell",
         "javascript",
         "json",
         "lua",
         "markdown",
         "markdown_inline",
+        "ocaml",
         "python",
         "query",
         "regex",
