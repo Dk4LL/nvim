@@ -4,6 +4,9 @@
 -- dk4ll@proton.me
 --
 
+local discipline = require("Dk4LL.discipline")
+discipline.cowboy()
+
 -- Variáveis básicas usadas na configuração
 local keymap = vim.keymap
 local opts = { noremap = true, silent = true }
