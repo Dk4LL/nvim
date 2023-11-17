@@ -41,3 +41,7 @@ keymap.set("n", "<C-w><down>", "<C-w>-")
 keymap.set("n", "<C-j>", function()
   vim.diagnostic.goto_next()
 end, opts)
+
+-- Comandos para o Live-sever (ativa, desativa)
+keymap.set("n", "<leader>1", ":LiveServerStart<Return>")
+keymap.set("n", "<leader>2", ":LiveServerStop<Return>")
