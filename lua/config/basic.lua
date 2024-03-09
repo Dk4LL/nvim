@@ -2,7 +2,6 @@
 -- File create by Dk4LL (dk4ll@proton.me)
 -- ------------------------------------------------------------------------------------------------
 
-
 -- Define my leader key
 vim.g.mapleader = " "
 
@@ -66,11 +65,14 @@ vim.opt.ignorecase = true
 -- Active highlight in search
 vim.opt.hlsearch = true
 
--- Jump between buffers without saving 
+-- Jump between buffers without saving
 vim.opt.hidden = true
 
 -- Define foldmode by tabulation
 vim.opt.foldmethod = "indent"
+
+-- Active autoindent
+vim.opt.autoindent = true
 
 -- Smart break line actived
 vim.opt.linebreak = true
@@ -78,3 +80,23 @@ vim.opt.linebreak = true
 -- Show recommendation in command line
 vim.opt.wildmenu = true
 
+-- Wrap lines
+vim.opt.wrap = true
+
+-- Define use to backspace key
+vim.opt.backspace = { "start", "eol", "indent" }
+
+-- Put new windows below current
+vim.opt.splitbelow = true
+
+-- Put new windows right of current
+vim.opt.splitright = true
+
+-- Define visible cursor in split
+vim.opt.splitkeep = "cursor"
+
+-- Desactive mouse support
+-- vim.opt.mouse = ""
+
+-- Active highlight cursor line
+vim.opt.cursorline = true
