@@ -4,5 +4,5 @@
 -- Date: 07/03/2024
 -- ------------------------------------------------------------------------------------------------
 
-require("config.basic")
-require("config.lazy")
+require("core.basic")
+require("core.lazy")
