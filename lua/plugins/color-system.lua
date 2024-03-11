@@ -1,16 +1,20 @@
 -- ------------------------------------------------------------------------------------------------
--- Install/Config file to Gitsigns
+-- Install/Config file to color scheme
 -- Author: Dk4LL (dk4ll@proton.me)
 -- Date: 10/03/2024
 -- ------------------------------------------------------------------------------------------------
 
 return {
-  "lewis6991/gitsigns.nvim",
-  config = function()
-    require("gitsigns").setup()
-
-    keyset = vim.keymap.set
-
-    keyset("n", "<leader>gp", ":Gitsigns preview_hunk<CR>", {})
-  end
+  {
+    "rebelot/kanagawa.nvim",
+    lazy = false,
+    name = "kanagawa",
+    priority = 1000,
+    config = function()
+      -- {wave, dragon, lotus}
+      require("kanagawa").load("wave")
+    end
+  }
 }
+
+
