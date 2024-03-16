@@ -6,7 +6,7 @@
 .DS_Store
 
 # Ignore lazy-lock file
-#lazy-lock.json
+lazy-lock.json
 
 # Ignore specific folders 
 #plugged/
