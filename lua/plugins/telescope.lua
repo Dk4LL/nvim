@@ -92,5 +92,8 @@ return {
     keyset('n', '<leader>lD', builtin.lsp_definitions, {})
     -- Goto the definition of the type of the word under the cursor, if there's only one, otherwise show all options in Telescope
     keyset('n', '<leader>lt', builtin.lsp_type_definitions, {})
+    
+
+    vim.api.nvim_create_autocmd("FileType", { pattern = "TelescopeResults", command = [[setlocal nofoldenable]] })
   end
 }
