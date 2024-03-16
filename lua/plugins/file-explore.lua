@@ -17,6 +17,10 @@ return {
 
     local keyset = vim.keymap.set
 
-    keyset('n', '<leader>e', ':Neotree filesystem git_status reveal left<CR>', {})
+    -- Open filesystem
+    keyset('n', '<leader>ef', ':Neotree filesystem reveal left<CR>', {})
+    -- Open filesystem with git statys
+    keyset('n', '<leader>eg', ':Neotree filesystem git_status reveal left<CR>', {})
+
   end
 }
