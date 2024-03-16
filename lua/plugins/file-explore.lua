@@ -1,0 +1,22 @@
+-- ------------------------------------------------------------------------------------------------
+-- Install/Config file to nvim-neo-tree
+-- Author: Dk4LL (dk4ll@proton.me)
+-- Date: 16/03/2024
+-- ------------------------------------------------------------------------------------------------
+
+return {
+  "nvim-neo-tree/neo-tree.nvim",
+  branch = "v3.x",
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "nvim-tree/nvim-web-devicons",
+    "MunifTanjim/nui.nvim",
+    -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
+  },
+  config = function()
+
+    local keyset = vim.keymap.set
+
+    keyset('n', '<leader>e', ':Neotree filesystem git_status reveal left<CR>', {})
+  end
+}
