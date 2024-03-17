@@ -102,3 +102,6 @@ vim.opt.mouse = ""
 
 -- Active highlight cursor line
 vim.opt.cursorline = true
+
+-- Desactive show mode
+vim.opt.showmode = false
