@@ -23,7 +23,73 @@ return {
 --  }
   "neovim/nvim-lspconfig",
   config = function()
+
     local lspconfig = require("lspconfig")
+
+    -- ------------------------------------------------------------------------
+    -- CSS LSP
+    -- ------------------------------------------------------------------------
+    lspconfig.cssls.setup({
+      cmd = { "vscode-css-language-server", "--stdio" },
+      filetypes = { "css", "scss", "less" },
+      init_options = {
+        provideFormatter = true
+      },
+      --root_dir = root_pattern("package.json", ".git") or bufdir,
+      settings = {
+        css = { validate = true },
+        less = { validate = true },
+        scss = { validate = true }
+      },
+      single_file_support = true
+    })
+
+    -- ------------------------------------------------------------------------
+    -- Eslint LSP
+    -- ------------------------------------------------------------------------
+    lspconfig.eslint.setup({
+      cmd = { "vscode-eslint-language-server", "--stdio" },
+      filetypes = {
+        "javascript",
+        "javascriptreact",
+        "javascript.jsx",
+        "typescript",
+        "typescriptreact",
+        "typescript.tsx",
+        "vue",
+        "svelte",
+        "astro" },
+      --handlers = {
+      --  ["eslint/confirmESLintExecution"] = <function 1>,
+      --  ["eslint/noLibrary"] = <function 2>,
+      --  ["eslint/openDoc"] = <function 3>,
+      --  ["eslint/probeFailed"] = <function 4>
+      --},
+      settings = {
+        codeAction = {
+          disableRuleComment = {
+            enable = true,
+            location = "separateLine"
+          },
+          showDocumentation = { enable = true }
+        },
+        codeActionOnSave = {
+          enable = false,
+          mode = "all"
+        },
+        experimental = { useFlatConfig = false },
+        format = true,
+        nodePath = "",
+        onIgnoredFiles = "off",
+        problems = { shortenToSingleLine = false },
+        quiet = false,
+        rulesCustomizations = {},
+        run = "onType",
+        useESLintClass = false,
+        validate = "on",
+        workingDirectory = { mode = "location" }
+      }
+    })
 
     -- ------------------------------------------------------------------------
     -- HTML LSP
@@ -76,5 +142,50 @@ return {
       },
       single_file_support = true
     })
+
+    -- ------------------------------------------------------------------------
+    -- Lua LSP
+    -- ------------------------------------------------------------------------
+    lspconfig.lua_ls.setup{}
+
+    -- ------------------------------------------------------------------------
+    -- Ocaml LSP
+    -- ------------------------------------------------------------------------
+    lspconfig.ocamllsp.setup({
+      cmd = { "ocamllsp" },
+      filetypes = {
+        "ocaml",
+        "menhir",
+        "ocamlinterface",
+        "ocamllex",
+        "reason",
+        "dune" },
+      --root_dir = root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace")
+      single_file_support = true
+    })
+
+    -- ------------------------------------------------------------------------
+    -- Python LSP
+    -- ------------------------------------------------------------------------
+    lspconfig.pyright.setup({
+      cmd = { "pyright-langserver", "--stdio" },
+      filetypes = { "python" },
+      settings = {
+        python = {
+          analysis = {
+            autoSearchPaths = true,
+            diagnosticMode = "openFilesOnly",
+            useLibraryCodeForTypes = true
+          }
+        }
+      },
+      single_file_support = true
+    })
+
+    -- ------------------------------------------------------------------------
+    -- Typescript LSP
+    -- ------------------------------------------------------------------------
+    lspconfig.tsserver.setup{}
+
   end
 }

@@ -13,3 +13,7 @@ Also install on your system:
 
 * [texlab](https://github.com/latex-lsp/texlab)
 * [vscode-langservers-extracted](https://github.com/hrsh7th/vscode-langservers-extracted)
+* [pyright](https://github.com/microsoft/pyright)
+* [ocaml-lsp ](https://github.com/ocaml/ocaml-lsp)
+* [lua-language-server](https://github.com/LuaLS/lua-language-server)
+* [haskell-language-server](https://github.com/haskell/haskell-language-server)
