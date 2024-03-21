@@ -25,6 +25,24 @@ return {
   config = function()
 
     local lspconfig = require("lspconfig")
+    local keyset = vim.keymap.set
+
+    -- ------------------------------------------------------------------------
+    -- Keymaps
+    -- ------------------------------------------------------------------------
+    keyset('n', 'K', vim.lsp.buf.hover, {})
+    keyset('n', 'gd', vim.lsp.buf.definition, {})
+    keyset({'n', 'v'}, '<leader>ca', vim.lsp.buf.code_action, {})
+
+    -- ------------------------------------------------------------------------
+    -- C/C++ LSP
+    -- ------------------------------------------------------------------------
+    lspconfig.clang.setup({
+      cmd = { "clangd" },
+      filetypes = { "c", "cpp", "h", "hpp", "objc", "objcpp", "cuda", "proto" },
+      -- root_dir = root_pattern('.clangd','.clang-tidy','.clang-format','compile_commands.json','compile_flags.txt','configure.ac','.git')
+      single_file_support = true
+    })
 
     -- ------------------------------------------------------------------------
     -- CSS LSP
@@ -89,6 +107,22 @@ return {
         validate = "on",
         workingDirectory = { mode = "location" }
       }
+    })
+
+    -- ------------------------------------------------------------------------
+    -- Haskell LSP
+    -- ------------------------------------------------------------------------
+    lspconfig.hls.setup({
+      cmd = { "haskell-language-server-wrapper", "--lsp" },
+      filetypes = { 'haskell', 'lhaskell', 'cabal' },
+      --root_dir = lspconfig.util.root_pattern("hie.yaml", "stack.yaml", "cabal.project", "*.cabal", "package.yaml")
+      settings = {
+        haskell = {
+          cabalFormattingProvider = "cabalfmt",
+          formattingProvider = "ormolu"
+        }
+      },
+      single_file_support = true
     })
 
     -- ------------------------------------------------------------------------
@@ -160,7 +194,8 @@ return {
         "ocamllex",
         "reason",
         "dune" },
-      --root_dir = root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace")
+      -- para usar o root_patter tem que marcar false no single_file_support
+      --root_dir = lspconfig.util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace")
       single_file_support = true
     })
 

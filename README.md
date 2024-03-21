@@ -17,3 +17,4 @@ Also install on your system:
 * [ocaml-lsp ](https://github.com/ocaml/ocaml-lsp)
 * [lua-language-server](https://github.com/LuaLS/lua-language-server)
 * [haskell-language-server](https://github.com/haskell/haskell-language-server)
+* [clangd](https://github.com/clangd/clangd)
