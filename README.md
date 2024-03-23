@@ -18,3 +18,10 @@ Also install on your system:
 * [lua-language-server](https://github.com/LuaLS/lua-language-server)
 * [haskell-language-server](https://github.com/haskell/haskell-language-server)
 * [clangd](https://github.com/clangd/clangd)
+
+## Formatters
+Please install on you system:
+
+* [stylua](https://github.com/JohnnyMorganz/StyLua)
+* [cabal-fmt](https://github.com/phadej/cabal-fmt)
+* [ormolu](https://hackage.haskell.org/package/ormolu-0.7.4.0)

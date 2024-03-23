@@ -118,7 +118,7 @@ return {
       --root_dir = lspconfig.util.root_pattern("hie.yaml", "stack.yaml", "cabal.project", "*.cabal", "package.yaml")
       settings = {
         haskell = {
-          cabalFormattingProvider = "cabalfmt",
+          cabalFormattingProvider = "cabal-fmt",
           formattingProvider = "ormolu"
         }
       },
