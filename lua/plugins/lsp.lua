@@ -24,6 +24,8 @@ return {
   "neovim/nvim-lspconfig",
   config = function()
 
+    local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
     local lspconfig = require("lspconfig")
     local keyset = vim.keymap.set
 
@@ -41,7 +43,8 @@ return {
       cmd = { "clangd" },
       filetypes = { "c", "cpp", "h", "hpp", "objc", "objcpp", "cuda", "proto" },
       -- root_dir = root_pattern('.clangd','.clang-tidy','.clang-format','compile_commands.json','compile_flags.txt','configure.ac','.git')
-      single_file_support = true
+      single_file_support = true,
+      capabilities = capabilities
     })
 
     -- ------------------------------------------------------------------------
@@ -59,54 +62,8 @@ return {
         less = { validate = true },
         scss = { validate = true }
       },
-      single_file_support = true
-    })
-
-    -- ------------------------------------------------------------------------
-    -- Eslint LSP
-    -- ------------------------------------------------------------------------
-    lspconfig.eslint.setup({
-      cmd = { "vscode-eslint-language-server", "--stdio" },
-      filetypes = {
-        "javascript",
-        "javascriptreact",
-        "javascript.jsx",
-        "typescript",
-        "typescriptreact",
-        "typescript.tsx",
-        "vue",
-        "svelte",
-        "astro" },
-      --handlers = {
-      --  ["eslint/confirmESLintExecution"] = <function 1>,
-      --  ["eslint/noLibrary"] = <function 2>,
-      --  ["eslint/openDoc"] = <function 3>,
-      --  ["eslint/probeFailed"] = <function 4>
-      --},
-      settings = {
-        codeAction = {
-          disableRuleComment = {
-            enable = true,
-            location = "separateLine"
-          },
-          showDocumentation = { enable = true }
-        },
-        codeActionOnSave = {
-          enable = false,
-          mode = "all"
-        },
-        experimental = { useFlatConfig = false },
-        format = true,
-        nodePath = "",
-        onIgnoredFiles = "off",
-        problems = { shortenToSingleLine = false },
-        quiet = false,
-        rulesCustomizations = {},
-        run = "onType",
-        useESLintClass = false,
-        validate = "on",
-        workingDirectory = { mode = "location" }
-      }
+      single_file_support = true,
+      capabilities = capabilities
     })
 
     -- ------------------------------------------------------------------------
@@ -122,7 +79,8 @@ return {
           formattingProvider = "ormolu"
         }
       },
-      single_file_support = true
+      single_file_support = true,
+      capabilities = capabilities
     })
 
     -- ------------------------------------------------------------------------
@@ -140,7 +98,8 @@ return {
         provideFormatter = true
       },
       settings = {},
-      single_file_support = true
+      single_file_support = true,
+      capabilities = capabilities
     })
 
     -- ------------------------------------------------------------------------
@@ -174,13 +133,16 @@ return {
           }
         }
       },
-      single_file_support = true
+      single_file_support = true,
+      capabilities = capabilities
     })
 
     -- ------------------------------------------------------------------------
     -- Lua LSP
     -- ------------------------------------------------------------------------
-    lspconfig.lua_ls.setup{}
+    lspconfig.lua_ls.setup{
+      capabilities = capabilities
+    }
 
     -- ------------------------------------------------------------------------
     -- Ocaml LSP
@@ -196,7 +158,8 @@ return {
         "dune" },
       -- para usar o root_patter tem que marcar false no single_file_support
       --root_dir = lspconfig.util.root_pattern("*.opam", "esy.json", "package.json", ".git", "dune-project", "dune-workspace")
-      single_file_support = true
+      single_file_support = true,
+      capabilities = capabilities
     })
 
     -- ------------------------------------------------------------------------
@@ -214,13 +177,16 @@ return {
           }
         }
       },
-      single_file_support = true
+      single_file_support = true,
+      capabilities = capabilities
     })
 
     -- ------------------------------------------------------------------------
     -- Typescript LSP
     -- ------------------------------------------------------------------------
-    lspconfig.tsserver.setup{}
+    lspconfig.tsserver.setup{
+      capabilities = capabilities
+    }
 
   end
 }

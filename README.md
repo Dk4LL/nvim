@@ -18,4 +18,5 @@ Also install on your system:
 * [lua-language-server](https://github.com/LuaLS/lua-language-server)
 * [haskell-language-server](https://github.com/haskell/haskell-language-server)
 * [clangd](https://github.com/clangd/clangd)
-
+* [typeScript language server](https://www.npmjs.com/package/typescript-language-server)
+* [eslint](https://www.npmjs.com/package/eslint)
