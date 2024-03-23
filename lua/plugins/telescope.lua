@@ -73,25 +73,25 @@ return {
       keyset('n', '<leader>tU', builtin.pickers, {})
 
       -- Lists LSP references for word under the cursor
-      keyset('n', '<leader>lr', builtin.lsp_references, {})
+      --keyset('n', '<leader>lr', builtin.lsp_references, {})
       -- Lists LSP incoming calls for word under the cursor
-      keyset('n', '<leader>lc', builtin.lsp_incoming_calls, {})
+      --keyset('n', '<leader>lc', builtin.lsp_incoming_calls, {})
       -- Lists LSP outgoing calls for word under the cursor
-      keyset('n', '<leader>lC', builtin.lsp_outgoing_calls, {})
+      --keyset('n', '<leader>lC', builtin.lsp_outgoing_calls, {})
       -- Lists LSP document symbols in the current buffer
-      keyset('n', '<leader>lk', builtin.lsp_document_symbols, {})
+      --keyset('n', '<leader>lk', builtin.lsp_document_symbols, {})
       -- Lists LSP document symbols in the current workspace
-      keyset('n', '<leader>ls', builtin.lsp_workspace_symbols, {})
+      --keyset('n', '<leader>ls', builtin.lsp_workspace_symbols, {})
       -- Dynamically Lists LSP for all workspace symbols
-      keyset('n', '<leader>lS', builtin.lsp_dynamic_workspace_symbols, {})
+      --keyset('n', '<leader>lS', builtin.lsp_dynamic_workspace_symbols, {})
       -- Lists Diagnostics for all open buffers or a specific buffer. Use option bufnr=0 for current buffer.
-      keyset('n', '<leader>ld', builtin.diagnostics, {})
+      --keyset('n', '<leader>ld', builtin.diagnostics, {})
       -- Goto the implementation of the word under the cursor if there's only one, otherwise show all options in Telescope
-      keyset('n', '<leader>li', builtin.lsp_implementations, {})
+      --keyset('n', '<leader>li', builtin.lsp_implementations, {})
       -- Goto the definition of the word under the cursor, if there's only one, otherwise show all options in Telescope
-      keyset('n', '<leader>lD', builtin.lsp_definitions, {})
+      --keyset('n', '<leader>lD', builtin.lsp_definitions, {})
       -- Goto the definition of the type of the word under the cursor, if there's only one, otherwise show all options in Telescope
-      keyset('n', '<leader>lt', builtin.lsp_type_definitions, {})
+      --keyset('n', '<leader>lt', builtin.lsp_type_definitions, {})
 
       vim.api.nvim_create_autocmd("FileType", { pattern = "TelescopeResults", command = [[setlocal nofoldenable]] })
     end
@@ -108,5 +108,5 @@ return {
   --    })
   --    require("telescope").load_extension("ui-select")
   --  end
-  --}
+  --},
 }

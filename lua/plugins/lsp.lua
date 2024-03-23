@@ -39,13 +39,13 @@ return {
     -- ------------------------------------------------------------------------
     -- C/C++ LSP
     -- ------------------------------------------------------------------------
-    lspconfig.clang.setup({
-      cmd = { "clangd" },
-      filetypes = { "c", "cpp", "h", "hpp", "objc", "objcpp", "cuda", "proto" },
+    --lspconfig.clang.setup({
+    --  cmd = { "clangd" },
+    --  filetypes = { "c", "cpp", "h", "hpp", "objc", "objcpp", "cuda", "proto" },
       -- root_dir = root_pattern('.clangd','.clang-tidy','.clang-format','compile_commands.json','compile_flags.txt','configure.ac','.git')
-      single_file_support = true,
-      capabilities = capabilities
-    })
+    --  single_file_support = true,
+    --  capabilities = capabilities
+    --})
 
     -- ------------------------------------------------------------------------
     -- CSS LSP
